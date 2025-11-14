@@ -14,18 +14,15 @@ interface Director extends Teacher {
 
 // Function interface for printing teacher's name
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  ({ firstName, lastName }: { firstName: string; lastName: string }): string;
 }
 
-function printTeacher(
-  firstName: string,
-  lastName: string
-): printTeacherFunction {
-  return (firstName: string, lastName: string): string => {
-    return `${firstName}. ${lastName}`;
-  };
-}
-// Implementation of the printTeacher function
-// const printTeacher: printTeacherFunction = (firstName, lastName) => {
-//   return `${firstName}. ${lastName}`;
-// };
+const printTeacher: printTeacherFunction = function ({
+  firstName,
+  lastName,
+}: {
+  firstName: string;
+  lastName: string;
+}): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
