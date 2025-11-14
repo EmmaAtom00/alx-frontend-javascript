@@ -17,7 +17,10 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-function printTeacher(): printTeacherFunction {
+function printTeacher(
+  firstName: string,
+  lastName: string
+): printTeacherFunction {
   return (firstName: string, lastName: string): string => {
     return `${firstName}. ${lastName}`;
   };
