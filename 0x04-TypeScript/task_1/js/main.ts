@@ -40,8 +40,11 @@ interface StudentClassInterface {
   workOnHomework(): string;
 }
 
+//  can be used to create StudentClass
+// class StudentClass implements StudentClassInterface {}
+
 // Writing a class
-class StudentClass implements StudentClassInterface {
+class StudentClass {
   firstName: string;
   lastName: string;
 
