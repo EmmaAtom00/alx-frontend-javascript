@@ -31,8 +31,17 @@ function printTeacher({
 //   return `${firstName}. ${lastName}`;
 // };
 
+interface constructorInterface {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+  displayName(): string;
+  workOnHomework(): string;
+}
+
 // Writing a class
-class StudentClass {
+class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
 
